@@ -9,10 +9,10 @@ PCI_II
 4vcpu 2ram x2 completed (*)
 8vcpu 2ram x2 completed (*)
 
-PC_FAST_III
+PCnet_FAST_III
 1vcpu 1ram x2 completed (*)
-2vcpu 1ram x2 
-4vcpu 1ram x2 completed more or less (*)
+2vcpu 1ram x2 Completed (*)
+4vcpu 1ram x2 completed (*)
 8vcpu 1ram x2 completed (*)
 
 1vcpu 2ram x2 completed (*)
@@ -35,7 +35,7 @@ PRO_1000_MT_DESKTOP
 1vcpu 1ram x2 completed (*)
 2vcpu 1ram x2 completed (*)
 4vcpu 1ram x2 completed (*)
-8vcpu 1ram x2 
+8vcpu 1ram x2 completed (*)
 
 1vcpu 2ram x2 completed (*)
 2vcpu 2ram x2 completed (*)
@@ -44,7 +44,7 @@ PRO_1000_MT_DESKTOP
 
 
 Total de configurações = 64
-Total de configurações completas = 11,5
+Total de configurações completas = 56
 
 
 
