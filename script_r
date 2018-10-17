@@ -1,0 +1,18 @@
+setwd("C:\\Users\\Roger\\labredes");
+data=read.xlsx("VN_DATA.xlsx",header=TRUE,startRow=1, sheetIndex=1) # read spreadsheet
+Names=strsplit(as.character(data[,1]),"_m") # COL names
+FractalDim=data[,2] #Fractal Dimension - Rodogram method
+TCP_AVG=data[,3] # Mean of TCP bandwidth between VMs on appraisal
+Hurst=data[,4] # Fractal Memory per timeseries
+dataMatrix=cbind(FractalDim,TCP_AVG,Hurst) # creates the data matrix
+rownames(dataMatrix)=Names # drop the no data rows in dataMatrix
+delete.na <- function(DF, n=0) {
+DF[rowSums(is.na(DF)) <= n,]
+}
+data_dea = delete.na(dataMatrix) #creates the data_dea table
+inputs = data_dea[,1] # select only input variables values
+outputs = data_dea[,c(2,3)] # select only output variables values, SLACK=TRUE
+
+SCCR_I=sdea(inputs,outputs,RTS="CRS",ORIENTATION="IN") # runs super-efficiency 
+data.frame(SCCR_I$eff);
+dea.plot(inputs,outputs,RTS="crs",ORIENTATION="in"); # creates a plot with the input 
